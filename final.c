@@ -165,12 +165,12 @@ int main()
 				}
 				if (error > 0)
 				{
-					softPwmWrite(MOTOR1, error*100); // p control
+					softPwmWrite(MOTOR1, error*2000); // p control
 					softPwmWrite(MOTOR2, 0);
 				}
 				else if (error <= 0)
 				{
-				softPwmWrite(MOTOR2, -error* 100); // p control
+				softPwmWrite(MOTOR2, -error* 2000); // p control
 					softPwmWrite(MOTOR1, 0);
 				}
 				
@@ -238,7 +238,7 @@ int main()
 			printf("following finished\n");
 			printf("max error %f \n",max_error); 
 			printf("max time %d \n", max_time);
-			printf("score %f",score/100000);
+			printf("score %f",score*ENC2REDGEAR/100000);
 			printf("\n");
 			k = 1;
 			
